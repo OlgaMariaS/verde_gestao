@@ -73,3 +73,12 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# Sobre o React
+
+Os projetos React consideram SPA (Simple Pages Applications)
+
+- Os "imports" no react são utilizados para importar bibliotecas e outros arquivos, assim como em outras linguagens de programação e ferramentas.
+- sobre o createRoot(passamos um document.id) 
+- A primeira letra de um componente renderizadado necessita de ser Maiúscula! Ex.: "Apps" "
+- 
