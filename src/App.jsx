@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
 import Form from './components/Form';
 
+/*
 function App() {
   const [count, setCount] = useState(0)
 
@@ -33,7 +33,7 @@ function App() {
   )
 }
 
-/*
+
 function FuncaoTeste() {
   // State (Estado): É uma variável, assim como a variável mensagem, e o que acontece, quando alteramos o state, alteramos a tela da nossa página.
   // let mensagem = 'Olá mundo! Boa testar um botão de redirecionamento' Exemplo
@@ -61,14 +61,16 @@ function FuncaoTeste() {
 
 */
 
-function TelaInicial() {
+export default function TelaInicial() {
   return (
-    <div>
-      <h1> Sistema Verde Gestão </h1>
+    <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
+      <div className="w-[500px]">
+        <h1 className='text-3xl text-slate-100 font-bold text-center'> 
+          Sistema Verde Gestão </h1>
+      </div>
       <Form />
     </div>
   );
 
 }
 // Próxima parte: Estilização utilizando o tailwind CSS :) -> basta seguir as orientações de configuração no site deles.
-export default TelaInicial
