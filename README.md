@@ -1,84 +1,99 @@
 # Projeto VERDE GESTÃO
 
-Aqui estão as instruções iniciais para todos os desenvolvedores, com foco em padronização e boas práticas.
-Deve-se também adicionar tópicos que expliquem regras/passos sobre o projeto ao longo do ciclo de vida.
+## Tecnologias utilizadas
 
-## Práticas no Git
+- Node.js — runtime JavaScript. (https://nodejs.org/)
+- React — biblioteca UI. (https://reactjs.org/)
+- Vite — bundler/dev server rápido. (https://vitejs.dev/)
+- Tailwind CSS — framework utilitário de CSS. (https://tailwindcss.com/)
 
-#### 1. Crie uma branch a partir da `main`:
+## Verificar Node.js
 
-```bash
-git checkout main
-git pull origin main
-git checkout -b "nome_da_sua_branch"
-```
-
-Nomes de branch:
-
-- feature/codigo_funcionalidade → novas funcionalidades
-- fix/descricao_bug → correções
-
-Durante o trabalho na sua branch, pode executar da maneira que desejar, pois não afetará os outros envolvidos.
-
-#### 2. Commits
-
-Boas práticas é commitar a cada conclusão de etapa ao invés de um único commit com todas as alterações, exemplo:
+Abra o terminal (cmd, PowerShell ou terminal do seu IDE) e confirme a versão instalada:
 
 ```bash
-git commit -m "adicionar autenticação do usuário"
-git commit -m "corrigir bug na consulta de usuários"
+node -v
 ```
 
-#### 3. Ao finalizar o trabalho
+Verifique na documentação do Vite qual a versão mínima do Node suportada para a versão do Vite que vai usar: https://vitejs.dev/.
 
-- Lembre-se de atualizar sua branch puxando alterações da main com git pull
-- Abra um Pull Request (PR) para main.
+## Criar projeto React com Vite
 
-Seu Pull request deve conter:
-
-- nome da sua branch - descrição breve
-- descrição detalhada
-
-        feature/F001 - Criação de usuários
-        ------------------------------------
-        Foi desenvolvido a funcionalidade de criar usuários pelo administrador.
-        Para testar é necessário estar logado com user e senha, navegar a tela gerenciar usuários.
-        ...
-
-O PR só poderá ser mergeado se tiver 3 aprovações.
-
-#### 4. Tags
-
-Quando ocorrem grandes mudanças ou marcos, será feito tags da main, assim teremos um versionamento do projeto mais eficiente.
+Para criar um novo projeto React usando a última versão do Vite:
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+npm create vite@latest
+# seguir prompts: nome do projeto, selecionar "react" ou "react-ts"
+cd nome-do-projeto
+npm install
+npm run dev
 ```
 
-## Instruções
+Links:
 
-Aqui escrevam instruções de ferramentas externas que foram utilizadas para guiar todos os desenvolvedores e para ter registrado para a futura implantação, exemplos:
+- Vite: https://vitejs.dev/
+- React: https://reactjs.org/
 
-- Instalar REACT da forma XX
-- Utilizado versão hibernate YY
-- Biblioteca "STD" instalada com comando 'install std --java'
-- Para icones foi utilizado o framework 'Icons'
+Observação: dependendo da versão do Vite e do Node, pode haver incompatibilidades — sempre consulte a documentação do Vite antes de iniciar.
 
-# React + Vite
+## Comandos básicos após criar o projeto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```bash
+# entrar na pasta do projeto
+cd nome-do-projeto
 
-Currently, two official plugins are available:
+# instalar dependências
+npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# rodar servidor de desenvolvimento
+npm run dev
 
-# Sobre o React
+# build para produção
+npm run build
+```
 
-Os projetos React consideram SPA (Simple Pages Applications)
+## Instalar Tailwind CSS
 
-- Os "imports" no react são utilizados para importar bibliotecas e outros arquivos, assim como em outras linguagens de programação e ferramentas.
-- sobre o createRoot(passamos um document.id) 
-- A primeira letra de um componente renderizadado necessita de ser Maiúscula! Ex.: "Apps" "
-- 
+Passos resumidos (seguir o guia oficial para detalhes e variações):
+
+```bash
+# instalar como dependência de desenvolvimento
+npm install -D tailwindcss postcss autoprefixer
+
+# gerar arquivo de configuração (cria tailwind.config.js e postcss.config.js)
+npx tailwindcss init -p
+```
+
+Depois, configure os caminhos para os seus arquivos no tailwind.config.js (campo `content`) e adicione as diretivas do Tailwind no CSS principal (por exemplo, src/index.css):
+
+```css
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Reinicie o servidor de desenvolvimento se necessário:
+
+```bash
+npm run dev
+```
+
+Guia oficial Tailwind: https://tailwindcss.com/docs/installation
+
+## Por que usar Tailwind CSS
+
+- Produtividade: utilitários prontos para compor estilos rapidamente sem escrever CSS customizado repetitivo.
+- Consistência: facilita manter um sistema de estilos uniforme entre componentes.
+- Performance: ao configurar corretamente o purge/content, o CSS final inclui apenas as classes usadas.
+- Flexibilidade: permite rápida prototipação e manutenção incremental.
+
+Referências rápidas:
+
+- Node.js: https://nodejs.org/
+- React: https://reactjs.org/
+- Vite: https://vitejs.dev/
+- Tailwind CSS: https://tailwindcss.com/
+- Guia de criação de projetos Vite + React: https://vitejs.dev/guide/
+- Guia de instalação Tailwind: https://tailwindcss.com/docs/installation
+- Conferir suporte de versão do Vite: https://vitejs.dev/guide/compatibility.html
