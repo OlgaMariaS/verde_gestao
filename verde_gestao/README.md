@@ -96,4 +96,3 @@ Referências rápidas:
 - Tailwind CSS: https://tailwindcss.com/
 - Guia de criação de projetos Vite + React: https://vitejs.dev/guide/
 - Guia de instalação Tailwind: https://tailwindcss.com/docs/installation
-- Conferir suporte de versão do Vite: https://vitejs.dev/guide/compatibility.html
