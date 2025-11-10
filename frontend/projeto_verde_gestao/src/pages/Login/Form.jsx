@@ -1,4 +1,24 @@
+import { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
+
 function Form() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useAuth(); // Usando o contexto de autenticação
+
+  // eslint-disable-next-line no-unused-vars
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await login(username, password);
+      // o redirecionamento após o login bem-sucedido pode ser tratado no App.jsx ou aqui
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
+      // Exibir mensagem de erro para o usuário
+    }
+  };
+
+
   return (
     // Vídeo de referência para o design do formulário: https://youtu.be/dD0s0s3QNjE?si=V1kJt5uYnJJebJ4p é bem básico, mas ajuda a entender o que pode ser feito
     <div className="w-screen min-h-screen bg-gradient-to-br from-emerald-50 via-amber-50 to-yellow-50 flex items-center justify-center p-6">
@@ -28,21 +48,22 @@ function Form() {
             </h2>
           </div>
 
-          <form action="#" method="POST" className="space-y-5">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
-                htmlFor="email"
+                htmlFor="username"
                 className="block text-sm font-medium text-emerald-900"
               >
                 Login
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
+                  id="username"
+                  name="username"
+                  type="text"
                   required
-                  autoComplete="email"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   className="block w-full rounded-md bg-amber-50 border border-amber-200 px-3 py-2 text-emerald-900 placeholder:text-amber-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none"
                 />
               </div>
@@ -71,7 +92,8 @@ function Form() {
                   name="password"
                   type="password"
                   required
-                  autoComplete="current-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="block w-full rounded-md bg-amber-50 border border-amber-200 px-3 py-2 text-emerald-900 placeholder:text-amber-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none"
                 />
               </div>
