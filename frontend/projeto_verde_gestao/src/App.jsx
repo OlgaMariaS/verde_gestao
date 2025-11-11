@@ -10,6 +10,7 @@ import { useAuth, AuthProvider } from "./context/AuthContext";
 import Form from "./pages/Login/Form";
 import TelaInicial from "./pages/Home/TelaInicial";
 import HomeLayout from "./components/layout/HomeLayout";
+import PaginaSolicitar from "./pages/Solicitacoes/PaginaSolicitar";
 
 // Componente para proteger rotas
 function ProtectedRoute() {
@@ -36,7 +37,7 @@ function AppRoutes() {
           {/* Rotas dentro do layout principal */}
           <Route path="/home" element={<TelaInicial />} />
           {/* Adicione outras rotas aqui */}
-          {/* <Route path="/solicitar" element={<PaginaSolicitar />} /> */}
+          <Route path="/solicitar" element={<PaginaSolicitar />} />
           {/* <Route path="/minhas-solicitacoes" element={<PaginaMinhasSolicitacoes />} /> */}
         </Route>
         {/* Rota padrão */}

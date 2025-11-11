@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 // Ícone de exemplo, podemos usar a biblioteca react-icons aqui
 const LogoIcon = () => (
-  <svg className="h-8 w-8 text-emerald-800" /* ... */ >
+  <svg className="h-8 w-8 text-emerald-600" /* ... */ >
     {/* Path do logo */}
   </svg>
 );
